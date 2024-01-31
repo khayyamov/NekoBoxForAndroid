@@ -1,10 +1,10 @@
-package libcore
+package libv2ray
 
 import (
 	"fmt"
 	"strings"
 
-	"libcore/stun"
+	"libv2ray/stun"
 )
 
 type StunResult struct {

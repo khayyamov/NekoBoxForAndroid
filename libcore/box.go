@@ -1,11 +1,11 @@
-package libcore
+package libv2ray
 
 import (
 	"context"
 	"errors"
 	"fmt"
 	"io"
-	"libcore/device"
+	"libv2ray/device"
 	"log"
 	"runtime"
 	"runtime/debug"

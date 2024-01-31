@@ -1,7 +1,7 @@
-package libcore
+package libv2ray
 
 import (
-	"libcore/device"
+	"libv2ray/device"
 	"os"
 	"path/filepath"
 	"runtime"

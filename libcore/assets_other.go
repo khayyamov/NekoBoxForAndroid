@@ -1,5 +1,5 @@
 //go:build !android
 
-package libcore
+package libv2ray
 
 func extractAssets() {}

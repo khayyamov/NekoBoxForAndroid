@@ -17,7 +17,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: |
-            app/libs/libcore.aar
+            app/libs/libv2ray.aar
           key: ${{ hashFiles('.github/workflows/*', 'golang_status', 'libcore_status') }}
       - name: Install Golang
         if: steps.cache.outputs.cache-hit != 'true'
@@ -32,6 +32,6 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: app/libs/libcore.aar
+          file: app/libs/libv2ray.aar
           tag: ${{ github.ref }}
           file_glob: true
