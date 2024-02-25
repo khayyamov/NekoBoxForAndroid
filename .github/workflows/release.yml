@@ -24,6 +24,16 @@ jobs:
         uses: actions/setup-go@v3
         with:
           go-version: ^1.21
+
+      - name: Run Shell Script
+        run: |
+          #!/bin/bash
+          
+          #remove http header validation
+          awk 'NR<594 || NR>617' /opt/hostedtoolcache/go/1.21.6/x64/src/net/http/request.go > /opt/hostedtoolcache/go/1.21.6/x64/src/net/http/request.go.tmp && mv /opt/hostedtoolcache/go/1.21.6/x64/src/net/http/request.go.tmp /opt/hostedtoolcache/go/1.21.6/x64/src/net/http/request.go
+          cat /opt/hostedtoolcache/go/1.21.6/x64/src/net/http/request.go
+          
+
       - name: Native Build
         if: steps.cache.outputs.cache-hit != 'true'
         run: ./run lib core
