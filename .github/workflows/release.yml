@@ -31,8 +31,8 @@ jobs:
           
           #remove http header validation
           ls /opt/hostedtoolcache/go/
-          awk 'NR<594 || NR>617' /opt/hostedtoolcache/go/1.21.6/x64/src/net/http/request.go > /opt/hostedtoolcache/go/1.21.6/x64/src/net/http/request.go.tmp && mv /opt/hostedtoolcache/go/1.21.6/x64/src/net/http/request.go.tmp /opt/hostedtoolcache/go/1.21.6/x64/src/net/http/request.go
-          cat /opt/hostedtoolcache/go/1.21.6/x64/src/net/http/request.go
+          awk 'NR<594 || NR>617' /opt/hostedtoolcache/go/1.21.7/x64/src/net/http/request.go > /opt/hostedtoolcache/go/1.21.7/x64/src/net/http/request.go.tmp && mv /opt/hostedtoolcache/go/1.21.7/x64/src/net/http/request.go.tmp /opt/hostedtoolcache/go/1.21.7/x64/src/net/http/request.go
+          cat /opt/hostedtoolcache/go/1.21.7/x64/src/net/http/request.go
           
 
       - name: Native Build
