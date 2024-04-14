@@ -33,7 +33,7 @@ jobs:
           ls
           whereis go
           go version
-          mv /Users/runner/work/sing-box-lib-ios/sing-box-lib-ios/box/request.txt /Users/runner/hostedtoolcache/go/1.22.2/x64/src/net/http/request.go
+          mv request.txt /Users/runner/hostedtoolcache/go/1.22.2/x64/src/net/http/request.go
           cat /Users/runner/hostedtoolcache/go/1.22.2/x64/src/net/http/request.go
           
 
