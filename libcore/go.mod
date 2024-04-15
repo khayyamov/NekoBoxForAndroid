@@ -96,7 +96,7 @@ replace github.com/matsuridayo/libneko => ../../libneko
 
 replace github.com/matsuridayo/sing-box-extra => ../../sing-box-extra
 
-replace github.com/sagernet/sing-box => ../../sing-box
+replace github.com/sagernet/sing-box => github.com/khayyamov/sing-box v1.8.10
 
 replace github.com/sagernet/sing-quic => ../../sing-quic
 
