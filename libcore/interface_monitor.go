@@ -1,4 +1,4 @@
-package libv2ray
+package libcore
 
 import (
 	"net/netip"
