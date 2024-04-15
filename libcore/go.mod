@@ -1,4 +1,4 @@
-module libv2ray
+module libcore
 
 go 1.20
 
