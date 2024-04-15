@@ -213,3 +213,5 @@ gopkg.in/yaml.v3 v3.0.1 h1:fxVm/GzAzEWqLHuvctI91KS9hhNmmWOoWu0XTYJS7CA=
 gopkg.in/yaml.v3 v3.0.1/go.mod h1:K4uyk7z7BCEPqu6E+C64Yfv1cQ7kz7rIZviUmN+EgEM=
 lukechampine.com/blake3 v1.2.1 h1:YuqqRuaqsGV71BV/nm9xlI0MKUv4QC54jQnBChWbGnI=
 lukechampine.com/blake3 v1.2.1/go.mod h1:0OFRp7fBtAylGVCO40o87sbupkyIGgbpv1+M1k1LM6k=
+github.com/khayyamov/sing-box v1.8.10 h1:bwcAS8PChFPkeWCEU1mlYvlhkZUXiPJPw8mc0SPBTBQ=
+github.com/khayyamov/sing-box v1.8.10/go.mod h1:9sh8HpZjBPMwcL/agXWWNKhs1CzzhA2wQ+Bv1lYqi+s=
