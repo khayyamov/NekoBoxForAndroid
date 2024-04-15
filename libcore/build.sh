@@ -1,5 +1,7 @@
 #!/bin/bash
 
+go mod tidy
+
 source ../buildScript/init/env_ndk.sh
 
 BUILD=".build"
