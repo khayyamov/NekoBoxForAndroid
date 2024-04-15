@@ -1,6 +1,6 @@
 //go:build android
 
-package libcore
+package libv2ray
 
 import (
 	"fmt"

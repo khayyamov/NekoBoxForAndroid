@@ -1,4 +1,4 @@
-package libcore
+package libv2ray
 
 import (
 	"libv2ray/device"

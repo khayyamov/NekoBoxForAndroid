@@ -1,4 +1,4 @@
-package libcore
+package libv2ray
 
 const (
 	geoipDat       = "geoip.db"

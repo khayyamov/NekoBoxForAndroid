@@ -1,4 +1,4 @@
-package libcore
+package libv2ray
 
 var intfBox BoxPlatformInterface
 var intfNB4A NB4AInterface
