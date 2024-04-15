@@ -1,6 +1,6 @@
 // libbox/dns.go
 
-package libcore
+package libv2ray
 
 import (
 	"context"

@@ -1,11 +1,11 @@
-package libcore
+package libv2ray
 
 import (
 	"context"
 	"encoding/json"
 	"errors"
 	"fmt"
-	"libcore/procfs"
+	"libv2ray/procfs"
 	"log"
 	"net/netip"
 	"strings"
