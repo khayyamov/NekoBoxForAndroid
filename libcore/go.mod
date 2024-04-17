@@ -94,7 +94,7 @@ require (
 
 replace github.com/matsuridayo/libneko => ../../libneko
 
-replace github.com/matsuridayo/sing-box-extra => ../../sing-box-extra
+replace github.com/matsuridayo/sing-box-extra => github.com/khayyamov/sing-box-extra v0.0.4
 
 replace github.com/sagernet/sing-box => github.com/khayyamov/sing-box v1.8.14
 
