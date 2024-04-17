@@ -98,7 +98,7 @@ replace github.com/matsuridayo/sing-box-extra => ../../sing-box-extra
 
 replace github.com/sagernet/sing-box => github.com/khayyamov/sing-box v1.8.14
 
-replace github.com/sagernet/sing-quic => ../../sing-quic
+replace github.com/sagernet/sing-quic => github.com/khayyamov/sing-quic v0.0.7
 
 // replace github.com/sagernet/sing => ../../sing
 
