@@ -1,31 +1,34 @@
-name: Release Build
-on:
-  push:
-jobs:
-  libcore:
-    name: Native Build (LibCore)
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Golang Status
-        run: find buildScript libcore/*.sh | xargs cat | sha1sum > golang_status
-      - name: Libcore Status
-        run: git ls-files libcore | xargs cat | sha1sum > libcore_status
-      - name: LibCore Cache
-        id: cache
-        uses: actions/cache@v3
-        with:
-          path: |
-            app/libs/libv2ray.aar
-          key: ${{ hashFiles('.github/workflows/*', 'golang_status', 'libcore_status') }}
-      - name: Install Golang
-        if: steps.cache.outputs.cache-hit != 'true'
-        uses: actions/setup-go@v3
-        with:
-          go-version: ^1.21
+name: Release
 
-      - name: Run Shell Script
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release version'
+        required: true
+        type: string
+      tag:
+        description: 'Git Tag to checkout'
+        required: true
+        type: string
+
+jobs:
+  release:
+    runs-on: macOS-12
+    steps:
+
+      - uses: actions/checkout@v3
+        with:
+          repository: 'khayyamov/sing-box'
+          path: 'box'
+          ref: ${{ github.event.inputs.tag }}
+
+      - name: Setup Go
+        uses: actions/setup-go@v3.5.0
+        with:
+          go-version: '1.22'
+
+      - name: Setup Gomobile
         run: |
           #!/bin/bash
           
@@ -35,16 +38,18 @@ jobs:
           go version
           mv request.txt /opt/hostedtoolcache/go/1.22.2/x64/src/net/http/request.go
           cat /opt/hostedtoolcache/go/1.22.2/x64/src/net/http/request.go
-          
 
-      - name: Native Build
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: ./run lib core
 
-      - name: Upload binaries to release
-        uses: svenstaro/upload-release-action@v2
+      - name: Build xcframework
+        run: |
+          cd box
+          go run ./cmd/internal/build_libbox -target=android
+          ls
+
+      - name: Upload Release
+        uses: softprops/action-gh-release@v1
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: app/libs/libv2ray.aar
-          tag: ${{ github.ref }}
-          file_glob: true
+          draft: false
+          tag_name: ${{ github.event.inputs.version }}
+          body: 'Compiled from source tag: ${{ github.event.inputs.tag }}'
+          files: box/libbox.aar
